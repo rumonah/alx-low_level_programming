@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  *
- * main - Entry point
+ * main - function main
  *
  * Return: always 0
  */
@@ -13,7 +13,7 @@ int main(void)
 	 while 
 	      (i <= 'z') {
 		      putchar(i);
-		      c++
+		      i++
 	      }
 	 putchar("\n");
 	 return (0);

@@ -1,22 +1,25 @@
-#includ <stdio.h>
- /**
-  *
-  * main - prints all possible combinations of single-digit numbers.
-  *
-  */
+#include <stdio.h>
+
+/**
+*
+* main - prints all possible combinations of single-digit numbers.
+*
+*/
 
 int main(void)
 { 
-	int a;
-	for (a = 48; n < 58; a++)
+	int r;
+
+	for (r = 0 ; r < 10 ; r++)
 	{
-		putchar(a);
-		if (a != 57)
+		if (r ==9)
+			putchar(r +'0')
+		else
 		{
-			putchar(',');
-			putchar(' ');
+		putchar(r + '0');
+		putchar(',');
+		putchar(' ');
 		}
 	}
-		putchar('\n');
-		return (0);
+	return (0);
 }

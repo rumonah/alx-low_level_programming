@@ -9,9 +9,9 @@ int main(void)
 {
 	char r;
 
-	for(r = 'a';r <= 'z';r++);
+	for(r = 'a' ; r <= 'z';r++);
 	{
-	if(r! = 'e' && c! ='q');
+	if(r ! = 'e' && c ! ='q');
 	{
 		putchar(r);
 	}

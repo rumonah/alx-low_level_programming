@@ -1,24 +1,21 @@
 #include <stdio.h>
 
 /**
- * main -Entry point
+ * main - Print the alphabet
  *
- * Return: 0 (success)
+ * Return: Always 0
  */
 
 int main(void)
 {
-	char r;
-	
-	if (r ='a';r <= 'z';r++)
-	{
-		putchar(r);
-	}
-	if (r = 'A';r <= 'Z';r++)
-	{
-		putchar(r);
-	}
+	char alpha[52]=("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWZYZ");
+	int r;
 
+	if (r = 0;r < 52;r++)
+	{
+		putchar(alpha)(r);
+	}
+	
 	putchar('\n');
 
 	return (0);

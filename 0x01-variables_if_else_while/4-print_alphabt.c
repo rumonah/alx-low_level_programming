@@ -7,9 +7,9 @@
  */
 int main(void)
 {
-	char r;
+	int r;
 
-	for(r = 'a' ; r <= 'z';r++);
+	for (r = 'a' ; r <= 'z';r++);
 	{
 	if(r ! = 'e' && c ! ='q');
 	{

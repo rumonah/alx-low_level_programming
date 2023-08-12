@@ -11,6 +11,7 @@ int main(void)
 	int r;
 
 	for (r = 0 ; r < 10 ; r++)
+	{
 		if (r == 9)
 			putchar(r + '0');
 		else
@@ -19,5 +20,6 @@ int main(void)
 		putchar(',');
 		putchar(' ');
 		}
+	}
 	return (0);
 }

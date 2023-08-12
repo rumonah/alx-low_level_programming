@@ -9,19 +9,16 @@
 int main(void)
 {
 	char r;
-	char j;
-
-	r = 'a';
-	j = 'A';
+	
 	while 
 		(r ='a';r <= 'z';r++)
 		{
 			putchar(r);
 		}
 	while 
-		(j = 'A';j <= 'Z';j++)
+		(r = 'A';r <= 'Z';r++)
 		{
-			putchar(j);
+			putchar(r);
 		}
 	putchar("\n");
 

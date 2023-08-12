@@ -10,17 +10,16 @@ int main(void)
 {
 	char r;
 	
-	while 
-		(r ='a';r <= 'z';r++)
-		{
-			putchar(r);
-		}
-	while 
-		(r = 'A';r <= 'Z';r++)
-		{
-			putchar(r);
-		}
-	putchar("\n");
+	if (r ='a';r <= 'z';r++)
+	{
+		putchar(r);
+	}
+	if (r = 'A';r <= 'Z';r++)
+	{
+		putchar(r);
+	}
+
+	putchar('\n');
 
 	return (0);
 }

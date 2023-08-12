@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main -Entry point
  *
@@ -8,21 +9,11 @@
 int main(void)
 {
 	char r;
-	char j;
-	r = 'a';
-	j = 'A';
-	while
-		(r <= 'z') 
-		{
+
+	while (r = 'a'; r <= 'z'; r++) 
 			putchar(r);
-			r++;
-		}
-	while
-	       	(j <= 'Z')
-		{
-		putchar(j);
-		j++;
-		}
+	while (r = 'A'; r <= 'A'; r++)
+		putchar(r);
 	putchar("\n");
 	return (0);
 }

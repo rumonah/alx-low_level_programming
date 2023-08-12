@@ -8,13 +8,16 @@
 
 int main(void)
 {
-	char alpha[52] = ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWZYZ");
-	int r;
+	char r;
 
-	for (r = 0 ; r < 52 ; r++)
+	for (r = 'a' ; r <= 'z' ; r++)
 	{
-		putchar(alpha)(r);
+		putchar(r);
 	}
+	for (r = 'A' ; r <= 'Z' ; r++)
+	{
+		putchar(r);
+	
 	putchar('\n');
 
 	return (0);

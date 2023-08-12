@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
-* main -  prints all the numbers of base 16 in lowercase
+* main - prints all the numbers of base 16 in lowercase
 *
-* Return: 0
+* Return: always 0
 */
 
 int main(void)

@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 /**
  * print_sign -print the sign of a number
  * @n: the numbers to be cheched

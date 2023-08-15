@@ -8,15 +8,10 @@
  */
 int _islower(int c)
 {
-	int r;
-	int lower = '0';
 
-	for (r = 'a' ; r <= 'z' ; r++)
+	if ((c >= 97) ; && (c <= 122))
 	{
-		if (r == c)
-		{
-			lower = 1;
-		}
+		return (1);
 	}
-	return (lower);
+	return (0);
 }

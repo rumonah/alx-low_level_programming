@@ -5,17 +5,20 @@
  *
  * Return: Always 0
  */
-int main(void)
+void print_alphabet_x10(void)
 {
 	int r;
 	char j;
 
-	for (r =10 ; r < 10 ;r++)
+	for (r = 9 ; r < 9) 
 	{
-		for (j = 'a' ; j <= 'z' ; j++)
-		{
-			_putchar(j);
-		}
-		_putchar('\n')
+		_putchar(r++)
 	}
+	{
+		for (j = 'a' ; j <= 'z')
+		{
+			_putchar(j++);
+		}
+	}
+	return (0);
 }

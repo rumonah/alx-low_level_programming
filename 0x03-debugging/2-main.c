@@ -11,8 +11,8 @@ int main(void)
 	int a, b, c;
 	int largest;
 	
-	a = 972;
-	b = -98;
+	a = 874;
+	b = 98;
 	c = 0;
 	
 	largest = ( a + b + c);

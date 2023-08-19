@@ -2,7 +2,7 @@
 
 /**
  * print_numbers - function that prints 0 to 9
- * _putchar to execute
+ * Description: use _putchar to execute
  * Return: void
  */
 

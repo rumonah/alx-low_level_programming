@@ -1,11 +1,21 @@
 #include "main.h"
+
 /**
- * main - check the code
- * _putchar to execute
- * Return: Always 0.
+ * main -Prints _putchar followed by new line.
+ *
+ * Return: always 0
  */
+
 int main(void)
 {
-    print_numbers();
-    return (0);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+	return (0);
 }

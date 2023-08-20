@@ -4,8 +4,6 @@
 /**
  * main - entry point
  * Description: prints the number 1 to 100
- * Fizz for multiple of 3, Buzz for multiple of 5 and fizzbuz for muliple of both
- *
  * Return: 0
  */
 
@@ -23,6 +21,8 @@ int main(void)
 			printf("%s", "Buzz");
 		else
 			printf("%d", a);
+		if (a < 100)
+			printf(" ");
 	}
 	printf("\n");
 	return (0);

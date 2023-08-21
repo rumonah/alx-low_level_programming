@@ -2,7 +2,7 @@
 
 /**
  * _strlen - print a function that returns th elength of a string
- * @r: sting
+ * @s: is the sting
  * Return: length
  */
 
@@ -12,7 +12,7 @@ int _strlen(char *s)
 
 	while (*s != '\0')
 	{
-		lenth ++;
+		lenth++;
 		s++;
 	}
 

@@ -5,13 +5,14 @@
  *
  * Description: print it followed by 2 spaces
  *
- * use _putchar
  */
-void times_table(void);
+
+
+void times_table(void)
 {
 	int j, k, m;
 
-	for (i = 0 ; i <= 9 ; i++)
+	for (j = 0 ; j <= 9 ; j++)
 	{
 		_putchar('0');
 		_putchar(',');
@@ -19,21 +20,23 @@ void times_table(void);
 	}
 	for (k = 0 ; k <= 9 ; k++)
 	{
-		m = (i * j);
+		m = j * k;
+
+		if ((m / 10) > 0)
+		{
+			_putchar((m / 10) + '0');
+		}
+		else
+		{
+			_putchar(' ');
+		}
+		_putchar((m % 10) + '0');
+		if 
+		
+		{
+			_putchar(',');
+			_putchar(' ');
+		}
+		_putchar('\n');
 	}
-	if ((m / 10) > 0)
-	{
-		_putchar((m / 10) + '0');
-	}
-	else
-	{
-		_putchar(' ');
-	}
-	_putchar((m % 10) + '0');
-	if (j < 9)
-	{
-		_putchar(',');
-		_putchar(' ');
-	}
-	_putchar('\n')
 }

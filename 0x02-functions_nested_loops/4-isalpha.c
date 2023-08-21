@@ -1,10 +1,8 @@
 #include "main.h"
 /**
- * _isalpha  - Returns 1 if c is a letter, lowercase or uppercase
+ * _isalpha  - check for alpherbetic characters
  *
- * Describe :use _putchar
- *
- * @c: collect the character
+ * @c: The character paremeter
  *
  * Return:  1 if c is lowercase or uppercase otherwise 0
  */
@@ -14,6 +12,5 @@ int _isalpha(int c)
 	{
 		return (1);
 	}
-	{
-		return (0);
+	return (0);
 }

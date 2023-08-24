@@ -5,28 +5,20 @@
  * _strcat - function that concentrates two strings
  * @src: the input value
  * @dest: the input value
- * Return: void
+ * Return: dest.
  */
 
 char *_strcat(char *dest, char *src)
 {
-	int num;
+	int destsiz = 0;
+	int srcsiz = 0;
 	int a;
 
-	a = 0;
-	num = 0;
-
-	while (src[a] != '\0')
-	{
-		a++;
-	}
-	a = 0;
-	while (dest[num] != '\0')
-	{
-		dest[num] = src[a];
-		a++;
-		num++;
-	}
-	dest[num] = '\0';
+	for (a = 0 ; src[a] != '\0' ; a++)
+		srcsiz++;
+	for (a = 0 ; dest[a] != '\0' ; a++)
+		destsiz++;
+	for (a = 0 ; a <= srcsiz ; a++)
+		dest[destsiz + a] = src[a];
 	return (dest);
 }

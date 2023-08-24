@@ -7,20 +7,26 @@
  * @dest: the input value
  * Return: void
  */
+
 char *_strcat(char *dest, char *src)
 {
+	int num;
 	int a;
-	int j;
 
-	for (a = 0 ; dest[a] != '\0' ; a++)
+	a = 0;
+	num = 0;
 
-	for (j = 0 ; src[j] != '\0' ; j++)
+	while (src[a] != '\0')
 	{
-		dest[a] = src[j];
 		a++;
 	}
-
-	dest[a] = '\0';
-
+	a = 0;
+	while (dest[num] != '\0')
+	{
+		dest[num] = src[a];
+		a++;
+		num++;
+	}
+	dest[num] = '\0';
 	return (dest);
 }

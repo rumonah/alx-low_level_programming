@@ -4,8 +4,8 @@
  * _strncat - concentrate two strings
  *  use the most n bytes in src
  *  @n: input value
- *  @dest: input value
- *  @src: input value
+ *  @dest: destination value
+ *  @src: source value
  *  Return: dest
  */
 

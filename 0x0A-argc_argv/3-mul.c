@@ -47,7 +47,7 @@ int _atoi(char *s)
  * @argc: - arguments number
  * @agrv: - array of arguments
  *
- * Return: 0 for success, 1 for error
+ * Return: 0 for success, 1 for Error
  */
 
 int main(int argc, char *argv[])
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 
 	if (argc < 3 || argc > 3)
 	{
-		printf("error\n");
+		printf("Error\n");
 		return (1);
 	}
 

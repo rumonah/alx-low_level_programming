@@ -7,7 +7,7 @@
  * @s1: 1 string
  * @s2: 2 string
  *
- * Return: new allocated space
+ * Return: newly allocated space
  */
 
 char *str_concat(char *s1, char *s2)
@@ -33,7 +33,7 @@ char *str_concat(char *s1, char *s2)
 	for (r = 0 ; s1[r] != '\0' ; r++)
 		output[r] = s1[r];
 	for (r = 0 ; s2[r] != '\0' ; r++)
-		output[r] = s2[r];
+		output[s1size] = s2[r];
 	return (output);
 
 }

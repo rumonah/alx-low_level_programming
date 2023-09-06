@@ -3,6 +3,34 @@
 #include <stddef.h>
 #include <stdio.h>
 
+
+/**
+ * count_word - function to count the number of words in a string
+ * @s: string to evaluate
+ *
+ * Reurn: number of words
+ */
+
+int count_word(char *s)
+{
+        int coll, b, f;
+
+        coll = 0;
+        f = 0;
+
+        for (b = 0 ; s[b] != '\0' ; b++)
+        {
+                if (s[b] == ' ')
+                        coll = 0;
+                else if (coll == 0)
+                {
+                        coll == 1;
+                        f++;
+                }
+        }
+        return (f);
+}
+
 /**
  * strtow - splits a string into words
  * @str: string to split
@@ -47,31 +75,4 @@ char **strtow(char *str)
 	matrix[b] = NULL;
 
 	return (matrix);
-}
-
-/**
- * count_word - function to count the number of words in a string
- * @s: string to evaluate
- *
- * Reurn: number of words
- */
-
-int count_word(char *s)
-{
-	int coll, b, f;
-
-	coll = 0;
-	f = 0;
-
-	for (b = 0 ; s[b] != '\0' ; b++)
-	{
-		if (s[b] == ' ')
-			coll = 0;
-		else if (coll == 0)
-		{
-			coll == 1;
-			f++;
-		}
-	}
-	return (f);
 }

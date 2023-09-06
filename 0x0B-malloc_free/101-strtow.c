@@ -8,7 +8,7 @@
  * count_word - function to count the number of words in a string
  * @s: string to evaluate
  *
- * Reurn: number of words
+ * Return: number of words
  */
 
 int count_word(char *s)
@@ -32,18 +32,19 @@ int count_word(char *s)
 }
 
 /**
- * strtow - splits a string into words
+ * **strtow - splits a string into words
  * @str: string to split
- * Return: pointer to an array of strin
+ * Return: pointer to an array of strings
+ * for (Success) of NULL (Error)
  */
 char **strtow(char *str)
 {
 	char **matrix, *temp;
 	int a, b = 0, length = 0, words, c = 0, start, end;
 
-	while (*(str + lemgth))
+	while (*(str + length))
 		length++;
-	words = count_words(str);
+	words = count_word(str);
 	if (words == 0)
 		return (NULL);
 
@@ -61,8 +62,8 @@ char **strtow(char *str)
 				 temp = (char *) malloc(sizeof(char) * (c + 1));
 				 if (temp = NULL)
 					 return (NULL);
-				 while (start < end);
-				 *temp++ = str[start++];
+				 while (start < end)
+					 *temp++ = str[start++];
 				 *temp = '\0';
 				 matrix[b] = temp - c;
 				 b++;

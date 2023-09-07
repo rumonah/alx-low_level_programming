@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+
 #define ERR_MSG "Error"
 
 /**
@@ -16,7 +17,7 @@ int is_digit(char *r)
 
 	while (r[a])
 	{
-		if (s[a] < '0' || s[a] > '9')
+		if (r[a] < '0' || r[a] > '9')
 			return (0);
 		a++;
 	}
@@ -59,10 +60,12 @@ void errors(void)
 
 int main(int argc, char *argv[])
 {
-	char *s1, s2;
-	int leng1, leng2. leng, a, carry, digit1, digit2, *result, r = 0;
+	char *s1, *s2;
+	int leng1, leng2, leng, a, carry, digit1, digit2, *result, r = 0;
 
 	s1 = argv[1], s2 = argv[2];
+	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
+		errors();
 	leng1 = _strlen(s1);
 	leng2 = _strlen(s2);
 	leng = leng1 + leng2 + 1;
@@ -78,11 +81,11 @@ int main(int argc, char *argv[])
 		for (leng2 = _strlen(s2) - 1 ; leng2 >= 0 ; leng--)
 		{
 			digit2 = s2[leng2] - '0';
-			carry + = result[leng1 + leng2 + 1] + (digit1 * digit2);
-			result[leng1 + leng2 + 1] = carry /= 10;
+			carry += result[leng1 + leng2 + 1] + (digit1 * digit2);
+			result[leng1 + leng2 + 1] = carry % 10;
 		}
 		if (carry > 0)
-			result[leng1 + leng2 + 1] + = carry;
+			result[leng1 + leng2 + 1] += carry;
 	}
 	for (a = 0 ; a < leng - 1 ; a++)
 	{

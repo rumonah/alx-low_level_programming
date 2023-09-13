@@ -2,24 +2,22 @@
 #include "function_pointers.h"
 
 /**
- * int-index - executes a function given as a parameter on each element of an array
+ * array_iterator - executes a function given as a parameter on each element of an array
  * @array: the array
- * @cmp: pointer to function of 1 of the 3 in main
+ * @action: pointer to the to use
  * @size: size of element
- * Return: 0
+ * Return: void
  */
+
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	int r;
+	unsigned int r;
 
-	if (array == NULL || size <= 0 || cmp == NULL)
-		return (-1);
+	if (array == NULL || action == NULL)
+		return;
 
 	for (r = 0 ; < size ; r++)
 	{
-		if (cmp(array[r]))
-			return (r);
+		action(array[r]);
 	}
-
-	return (-1);
 }

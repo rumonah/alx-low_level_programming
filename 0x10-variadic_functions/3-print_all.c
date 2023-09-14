@@ -15,22 +15,22 @@ void print_all(const char * const format, ...)
 
 	va_start(list, format);
 
-	if (formart)
+	if (format)
 	{
 		while (format[r])
 		{
-			switch(formart[r])
+			switch(format[r])
 			{
-				case 'c';
+				case 'c':
 				printf("%s%c", sepa, va_arg(list, int));
 				break;
-				case 'i';
+				case 'i':
 				printf("%s%d", sepa, va_arg(list,int));
 				break;
-				case 'f';
+				case 'f':
 				printf("%s%f", sepa, va_arg(list,double));
 				break;
-				case 's';
+				case 's':
 				str = va_arg(list, char*);
 				if(!str)
 					str = "(nil)";

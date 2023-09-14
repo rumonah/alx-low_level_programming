@@ -19,20 +19,20 @@ void print_all(const char * const format, ...)
 	{
 		while (format[r])
 		{
-			switch(format[r])
+			switch (format[r])
 			{
 				case 'c':
 				printf("%s%c", sepa, va_arg(list, int));
 				break;
 				case 'i':
-				printf("%s%d", sepa, va_arg(list,int));
+				printf("%s%d", sepa, va_arg(list, int));
 				break;
 				case 'f':
-				printf("%s%f", sepa, va_arg(list,double));
+				printf("%s%f", sepa, va_arg(list, double));
 				break;
 				case 's':
 				str = va_arg(list, char*);
-				if(!str)
+				if (!str)
 					str = "(nil)";
 				printf("%s%s", sepa, str);
 				break;

@@ -12,7 +12,7 @@
 
 int main(int __attribute__((__unused__))argc, char *argv[])
 {
-	int count1, count 2;
+	int count1, count2;
 	char *op;
 
 	if (argc != 4)
@@ -25,13 +25,18 @@ int main(int __attribute__((__unused__))argc, char *argv[])
 	op = argv[2];
 	count2 = atoi(argv[3]);
 
-	if ((*op == '/' && count2 == 0) || (*op == '%' && count == 0))
+	if (get_op_func(op) == NULL || op[1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	if ((*op == '/' && count2 == 0) || (*op == '%' && count1 == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-
-	printf("%d\n" get_op_fun(op)(count1 count2));
+	printf("%d\n", get_op_func(op)(count1, count2));
 
 	return (0);
 }

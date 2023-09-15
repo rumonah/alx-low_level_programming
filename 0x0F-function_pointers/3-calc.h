@@ -1,8 +1,8 @@
-#ifdef CALC-H
+#ifndef CALC_H
 #define CALC_H
 
 /**
- * struct op - a struct op.h
+ * struct op - a struct op
  * @op: The oparator
  * @f: associated functio
  */

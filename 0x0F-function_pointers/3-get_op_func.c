@@ -12,7 +12,7 @@
 
 int (*get_op_func(char *s))(int, int)
 {
-	op_t op[] = {
+	op_t op[s] = {
 		{"+", op_add},
 		{"-", op_sub},
 		{"*", op_mul},

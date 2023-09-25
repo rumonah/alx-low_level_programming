@@ -6,7 +6,6 @@
  * @head: first element in the lists
  * @index: index of the node to delete
  * Return: 1 if it succeeded, -1 if it failed
- *
  */
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
@@ -15,7 +14,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	unsigned int r = 0;
 	listint_t *temp = *head;
 
-	if (*head == NULL )
+	if (*head == NULL)
 		return (-1);
 
 	if (index == 0)

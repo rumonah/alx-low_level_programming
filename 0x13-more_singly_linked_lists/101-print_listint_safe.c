@@ -12,28 +12,26 @@ size_t print_listint_safe(const listint_t *head);
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes, index = 0;
+	const listint_t **list = NULL;
 
-	nodes = looped_listint_len(head);
-
-	if (nodes == 0)
+	while (head != NULL)
 	{
-		for (; head != NULL ; nodes++)
+		for (nodes = 0 ; nodes < index ; nodes)
 		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
+			if (head == list[nodes])
+			{
+				printf("[%p] %d\n", (void *)head, head->n);
+				free(list);
+				return (index);
+			}
 		}
 	}
-	else
-	{
-		for (index = 0 ; index < nodes ; index++)
-		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
-		}
-
-		printf("-> [%p] %d\n", (void *)head, head->n);
+	index++;
+	list = _r(list, index, head);
+	printf("-> [%p] %d\n", (void *)head, head->n);
+	head = head->next;
 	}
-
+	free(list);
 	return (nodes);
 }
 
@@ -64,7 +62,7 @@ size_t looped_listint_len(const listint_t *head)
 			while (cheetah != ostrich)
 			{
 				nodes++;
-				ostrich - ostrich->next;
+				ostrich = ostrich->next;
 				cheetah = cheetah->next;
 			}
 			cheetah = cheetah->next;

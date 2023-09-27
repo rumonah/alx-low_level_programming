@@ -2,46 +2,31 @@
 
 /**
  * find_listint_loop - frees a linked list
- * @h: first node inthe linked list
- * Return: number of elements
+ * @head: pointer to the begining of the list
+ * Return: The address of the node where the loop starts,
+ * or NULL if there is no loop
  */
 listint_t *find_listint_loop(listint_t *head)
-{}
-
-/**
- * free_listint_safe - frees a linked list
- * @h: first node inthe linked list
- * Return: number of elements
- */
-size_t free_listint_safe(listint_t **h)
 {
-	size_t len = 0;
-	ind difft;
-	listint_t *temp;
+	const listint_t *ostrich, *cheetah;
 
-	if (!h || !*h)
-		return (0);
-
-	while (*h)
+	ostrich = cheetah = head;
+	while (ostrich && cheetah && cheetah->next)
 	{
-		difft = *h - (*h)->next;
-		if (difft > 0)
+		ostrich = ostrich->next;
+		cheetah = cheetah->next->next;
+		if (ostrich == cheetah)
 		{
-			temp = (*h)->next;
-			free(*h);
-			*h = temp;
-			len++;
-		}
-		else
-		{
-			free(*h);
-			*h = NULL;
-			len++;
+			ostrich = head;
 			break;
 		}
 	}
-
-		*h = NULL;
-
-		return (len);
+	if (!ostrich || cheetah || !ostrich->next)
+		return (NULL);
+	while (cheetah != ostrich)
+	{
+		ostrich = ostrich->next;
+		cheetah = cheetah->next;
+	}
+	return (cheetah);
 }

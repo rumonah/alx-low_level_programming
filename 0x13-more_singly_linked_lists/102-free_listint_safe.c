@@ -1,84 +1,66 @@
 #include "lists.h"
-#include <stdio.h>
-
-size_t looped_listint_len(const listint_t *head);
-size_t print_listint_safe(const listint_t *head);
+#include <stddef.h>
 
 /**
- * print_listint_safe - prints a listint_t list safely.
- * @head: pointer to head of the listint_t list
- * Return: number of nodes
+ * free_listint_safe - frees a linked list
+ * @h: first node inthe linked list
+ * Return: number of elements
  */
-size_t print_listint_safe(const listint_t *head)
+size_t free_listint_safe(listint_t **h)
 {
-	size_t nodes, index = 0;
-	nodes = looped_listint_len(head);
+	size_t len = 0;
+	int difft;
+	listint_t *temp;
 
-	if (nodes == 0)
+	if (!h || !*h)
+		return (0);
+
+	while (*h)
 	{
-		for (; head != NULL ; nodes++)
+		difft = *h - (*h)->next;
+		if (difft > 0)
 		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
+			temp = (*h)->next;
+			free(*h);
+			*h = temp;
+			len++;
+		}
+		else
+		{
+			free(*h);
+			*h = NULL;
+			len++;
+			break;
 		}
 	}
-	else
-	{
-		for (index = 0 ; index < nodes ; index++)
-		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
-		}
 
-		printf("-> [%p] %d\n", (void *)head, head->n);
-	}
+		*h = NULL;
 
-	return (nodes);
+		return (len);
 }
 
 /**
- * looped_listint_len - count the number of unique nodes
- * in a looped listint-t list
- * @head: pointer to head of the listint_to check.
- *
- * Return: 0 if list is not looped, otherwise
- * number of unique nodes in the list
+ * _ra - reallocation of memory for array pointer to the
+ * nodes in a linked list
+ * @list: append old list
+ * @size: size of new list, more than the old list
+ * @new: new node to add to the list
+ * Return: pointer to new list
  */
-
-size_t looped_listint_len(const listint_t *head)
+listint_t **ra(listint_t **list, size_t size, listint_t *new)
 {
-	const listint_t *ostrich, *cheetah;
-	size_t nodes = 1;
+	listint_t **latest;
+	size_t j;
 
-	if (head == NULL || head->next == NULL)
-		return (0);
-
-	ostrich = head->next;
-	cheetah = (head->next)->next;
-	while (cheetah)
+	latest = malloc(size * sizeof(listint_t *));
+	if (latest == NULL)
 	{
-                if (ostrich == cheetah)
-                {
-                        ostrich = head;
-                        while (cheetah != ostrich)
-                        {
-                                nodes++;
-                                ostrich - ostrich->next;
-                                cheetah = cheetah->next;
-                        }
-                        cheetah = cheetah->next;
-                        while (ostrich != cheetah)
-                        {
-                                nodes++;
-                                ostrich = ostrich->next;
-                        }
-
-                        return (nodes);
-                }
-
-                ostrich = ostrich->next;
-                cheetah = (cheetah->next)->next;
-        }
-
-        return (0);
+		free(list);
+		exit(98);
+	}
+	for (j = 0 ; j < size - 1 ; j++)
+		latest[j] = list[j];
+	latest[j] = new;
+	free(list);
+	return (latest);
 }

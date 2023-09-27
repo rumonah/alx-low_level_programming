@@ -8,7 +8,7 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	const listint_t *ostrich, *cheetah;
+	listint_t *ostrich, *cheetah;
 
 	ostrich = cheetah = head;
 	while (ostrich && cheetah && cheetah->next)

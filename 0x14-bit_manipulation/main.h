@@ -1,4 +1,4 @@
-#ifdef MAIN_H
+#ifndef MAIN_H
 #define MAIN_H
 
 int _putchar(char c);
@@ -10,6 +10,5 @@ int clear_bit(unsigned long int *n, unsigned int index);
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 int get_endianness(void);
 int _atoi(const char *s);
-int get_endianness(void);
 
 #endif

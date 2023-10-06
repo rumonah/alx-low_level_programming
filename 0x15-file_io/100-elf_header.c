@@ -251,6 +251,43 @@ void close_elf(int elf)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", elf);
 		exit(98);
 	}
+}
+
+/**
+ * main - display information contained in the ELF
+ * header at the start of an ELF file
+ * @argv: argumentive vector
+ * @argc: argumentive number
+ * Description: if file is not an ELF file or function
+ * fails - exit code 98
+ * Return: 0 on success
+ */
+int main(int __attribute__((__unused__)) argc, char *argv[])
+{
+	Elf64 - Ehdr * header;
+	int a, b;
+
+	a = open(argv[1], O_RDONLY);
+	if (a == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read file %s\n" argv[1]);
+		exit(98);
+	}
+	header = malloc(sizeof(Elf64 - Ehdr));
+	if (header == NULL)
+	{
+		close_elf(a);
+		dprintf(STDERR_FILENO, "Error: Can't read file %s\n" argv[1]);
+		exit(98);
+	}
+	b = read(a, header, sizeof(Elf64_Ehdr));
+	if (b == -1)
+	{
+		free(header);
+		close_elf(a);
+		dprintf(STDERR_FILENO, "Error: '%s' : No such file\n" argv[1]);
+		exit(98);
+	}
 
 	check_elf(header->e_ident);
 	printf("ELF Header:\n");
@@ -264,6 +301,6 @@ void close_elf(int elf)
 	print_entry(header->e_entry, header->e_ident);
 
 	free(header);
-	close_elf();
+	close_elf(a);
 	return (0);
 }

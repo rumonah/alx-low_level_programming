@@ -4,6 +4,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include "main.h"
 
 void check_IO_stat(int stat, int fd, char *filename, char mode);
 /**
@@ -60,12 +61,50 @@ void check_IO_stat(int stat, int fd, char *filename, char mode)
 	}
 	else if (mode == 'O' && stat == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
 	else if (mode == 'W' && stat == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 		exit(99);
+	}
+}
+
+/**
+ * create_buffer - allocates 1024 bytes for buffer
+ * @file: name of file buffer is storing chars for
+ * Return: new allocated buffer
+ */
+char *create_buffer(char *file)
+{
+	char *buf;
+
+	buf = malloc(sizeof(char) * 1024);
+
+	if (buf == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		exit(99);
+	}
+
+	return (buf);
+}
+
+/**
+ * close_file - close file description
+ * @fd: file description to be closed
+ */
+
+void close_file(int fd)
+{
+	int all;
+
+	all = close(fd);
+
+	if (all == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
 	}
 }

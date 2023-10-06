@@ -253,16 +253,16 @@ void close_elf(int elf)
 
 	check_elf(header->e_ident);
 	printf("ELF Header:\n");
-	printf_magic(header->e_ident);
-	printf_class(header->e_ident);
-	printf_data(header->e_ident);
-	printf_version(header->e_ident);
-	printf_abi(header->e_ident);
-	printf_osabi(header->e_ident);
-	printf_type(header->e_type, header->e_ident);
-	printf_entry(header->e_entry, header->e_ident);
+	print_magic(header->e_ident);
+	print_class(header->e_ident);
+	print_data(header->e_ident);
+	print_version(header->e_ident);
+	print_abi(header->e_ident);
+	print_osabi(header->e_ident);
+	print_type(header->e_type, header->e_ident);
+	print_entry(header->e_entry, header->e_ident);
 
 	free(header);
-	close_elf(o);
-	return(0);
+	close_elf();
+	return (0);
 }

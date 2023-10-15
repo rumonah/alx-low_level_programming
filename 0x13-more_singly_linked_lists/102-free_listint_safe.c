@@ -49,18 +49,18 @@ size_t free_listint_safe(listint_t **h)
  */
 listint_t **ra(listint_t **list, size_t size, listint_t *new)
 {
-	listint_t **latest;
-	size_t j;
+        listint_t **latest;
+        size_t j;
 
-	latest = malloc(size * sizeof(listint_t *));
-	if (latest == NULL)
-	{
-		free(list);
-		exit(98);
-	}
-	for (j = 0 ; j < size - 1 ; j++)
-		latest[j] = list[j];
-	latest[j] = new;
-	free(list);
-	return (latest);
+        latest = malloc(size * sizeof(listint_t *));
+        if (latest == NULL)
+        {
+                free(list);
+                exit(98);
+        }
+        for (j = 0 ; j < size - 1 ; j++)
+                latest[j] = list[j];
+        latest[j] = new;
+        free(list);
+        return (latest);
 }

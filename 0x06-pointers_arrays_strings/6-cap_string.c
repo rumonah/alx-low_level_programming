@@ -2,35 +2,36 @@
 
 /**
  * cap_string -  capitalize all words of a string
- * @r: capitalized to string
+ * @str: string to be capitalize
  *
- * return: r as the capital string
+ * return:  string
  */
 
-char *cap_string(char *r)
+char *cap_string(char *str)
 {
-	int string_lengh;
-	
-/* scan through the string*/
-	string_lengh = 0;
-	while (r[string_lengh] != '\0')
-	{/* if the next character after lenth is a char, capitalise it */
-		if (r[0] >=97 && r[0] <= 122)
-		{
-			r[0] = r[0] - 32;
-		}
-		if (r[string_lengh] == ' ' || r[string_lengh] == '\t' || r[string_lengh] == '\n'
-				|| r[string_lengh] == ',' || r[string_lengh] == ';' || r[string_lengh] == ','
-				|| r[string_lengh] == ',' || r[string_lengh] =='!' || r[string_lengh] == '?'
-				|| r[string_lengh] == '"' || r[string_lengh] == '(' || r[string_lengh] == ')'
-				|| r[string_lengh] == '{' || r[string_lengh] == '}')
-		{
-			if (r[string_lengh +1] >= 97 && r[string_lengh +1] <= 122)
-			{
-				r[string_lengh +1] = r[string_lengh + 1] -32;
-			}
-		}
-		string_lengh++;
+	int length = 0;
+
+	while (str[length])
+	{
+		while (!(str[length] >= 57 && str[length] <= 122))
+			length ++;
+		if (str[length - 1] == ' ' ||
+				str[length] == '\t' ||
+				str[lentgh] == '\n' ||
+				str[length] == ',' || 
+				str[length] == ';' ||
+				str[length] == '.' ||
+				str[length] == ',' || 
+				str[length] =='!' ||
+			       str[length] == '?' ||
+				str[length] == '"' ||
+			       	str[lenght] == '(' || 
+				str[length] == ')' ||
+				str[length] == '{' ||
+			       	str[length] == '}' ||
+				length == 0)
+			str[length] -= 32
+				length ++;
 	}
-	return (r);
+	return (str);
 }

@@ -8,7 +8,7 @@
  * is_digit - checks if string contains a non-digit character
  * @r: evacuated string
  *
- * Return: if no ditit is found 0. otherwise 1
+ * Return: if no digit is found 0. otherwise 1
  */
 
 int is_digit(char *r)
@@ -25,7 +25,7 @@ int is_digit(char *r)
 }
 
 /**
- * _strlen - return length oa a string
+ * _strlen - return length of a string
  * @s: evaluated string
  * Return: length of string
  */

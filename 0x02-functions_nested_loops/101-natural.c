@@ -5,7 +5,7 @@
  * 3 or 5 below 1024
  * Return: 0
  */
-int main(void)_
+int main(void)
 {
 	unsigned long int sum, sum3, sum5;
 	int r;

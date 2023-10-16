@@ -14,6 +14,9 @@ int main(void)
 
 	for (r = 1 ; r <= 50 ; ++r)
 	{
+		_putchar(',')
+	}
+	{
 		if (j != 20365011074)
 		{
 			printf("%ld,", j);

@@ -12,10 +12,7 @@ int main(void)
 	j = 1;
 	p = 2;
 
-	for (r = 1 ; r <= 50 ; ++r)
-	{
-		_putchar(',')
-	}
+	for (r = 1 ; r <= 50 ; ++r
 	{
 		if (j != 20365011074)
 		{

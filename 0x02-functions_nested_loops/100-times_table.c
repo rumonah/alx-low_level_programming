@@ -13,10 +13,12 @@ void print_times_table(int n)
 	{
 		for (digit = 0 ; digit <= n ; digit++)
 		{
-			for (multi = 0 ; multi <= n; multi++)
+			_putchar('0');
+			for (multi = 1 ; multi <= n; multi++)
 			{
-				{
-					result = digit * multi;
+				_putchar(',');
+				_putchar(' ');
+				result = digit * multi;
 					if (digit == 0)
 					{
 						_putchar(result + '0');
@@ -47,8 +49,7 @@ void print_times_table(int n)
 						_putchar((result % 10) + '0');
 					}
 				}
-				_putchar('\n');
 			}
 		}
-	}
+	_putchar('\n');
 }

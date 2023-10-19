@@ -3,20 +3,19 @@
 #include <stdio.h>
 
 /**
-* main - Entry point
-* Description: Print the value of n status
-* it is greater than, zero 0 and is less than 6.
-*
-* Return: always 0
-*/
+ * main - Entry point
+ * Description: Print the value of n status
+ * it is greater than, zero 0 and is less than 6.
+ *
+ * Return: always 0
+ */
 int main(void)
 {
-	int n,num;
+	int n, num;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-
-	num = n % 10; 
+	num = n % 10;
 
 	if (num > 5)
 		printf("Last digit of %i is %i and is greater than 5\n", n, num);

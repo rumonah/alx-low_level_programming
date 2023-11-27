@@ -14,7 +14,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int dest, n_read, src = 1024, wrote, close_src, close_dest;
+	int dest, src, n_read = 1024, wrote, close_src, close_dest;
 	unsigned int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
 	char buffer[1024];
 
@@ -107,4 +107,3 @@ void close_file(int fd)
 		exit(100);
 	}
 }
-

@@ -28,14 +28,14 @@ void error_file(int file_from, int file_to, char *argv[])
 }
 
 /**
-* main -copy the content of a file from one to another
+* main - copy the content of a file from one to another
 * @argv: argument vector
 * @argc: argument count
 * Return: 0 success
 */
 int main(int argc, char *argv[])
 {
-	int source, dest, close_error;
+	int file_from , file_to, close_error;
 	ssize_t chars, mode;
 	char buffer[1024];
 
@@ -45,30 +45,30 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	source = open(argv[1], O_RDONLY);
-	dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-	error_file(source, dest, argv);
+	file_from = open(argv[1], O_RDONLY);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	error_file(file_from, file_to, argv);
 
 	chars = 1024;
 	while (chars == 1024)
 	{
-		chars = read(source, buffer, 1024);
+		chars = read(file_from, buffer, 1024);
 		if (chars == -1)
 			error_file(-1, 0, argv);
 		if (mode == -1)
-			mode = write(source, buffer, 1024);
+			mode = write(file_from , buffer, chars);
 		error_file(0, -1, argv);
 	}
 
-	close_error = close(source);
+	close_error = close(file_from);
 	if (close_error == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d/n", source);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d/n", file_from);
 		exit(100);
 	}
-	close_error = close(dest);
+	close_error = close(file_to);
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d/n", dest);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d/n", file_to);
 		exit(100);
 	}
 

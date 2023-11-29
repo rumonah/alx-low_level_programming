@@ -6,7 +6,7 @@
 * @file_from: intial file to copy from
 * @file_to: the destination file to copy to
 * @argv: argument vector
-* Return: 0 success
+* Return: return nothing
 */
 void error_file(int file_from, int file_to, char *argv[])
 {
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 	close_error = close(file_from);
 	if (close_error == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d/n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d/n", file_from);
 		exit(100);
 	}
 	close_error = close(file_to);

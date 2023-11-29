@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 			error_file(-1, 0, argv);
 		if (mode == -1)
 			mode = write(source, buffer, 1024);
-		error_file(0, -1, argv)
+		error_file(0, -1, argv);
 	}
 
 	close_error = close(source);

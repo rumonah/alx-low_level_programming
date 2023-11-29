@@ -1,9 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <fcntl.h>
 #include "main.h"
 
 /**
@@ -11,13 +6,13 @@
 * @file_from: intial file to copy from
 * @file_to: the destination file to copy to
 * @argv: argument vector
-* Return: nothing
+* Return: 0 success
 */
 void error_file(int file_from, int file_to, char *argv[])
 {
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file to %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (file_to == -1)
@@ -56,19 +51,19 @@ int main(int argc, char *argv[])
 		if (chars == -1)
 			error_file(-1, 0, argv);
 		if (mode == -1)
-			mode = write(file_from, buffer, chars);
+			mode = write(file_to, buffer, chars);
 		error_file(0, -1, argv);
 	}
 
 	close_error = close(file_from);
 	if (close_error == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d/n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d/n", file_to);
 		exit(100);
 	}
 	close_error = close(file_to);
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d/n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d/n", file_from);
 		exit(100);
 	}
 

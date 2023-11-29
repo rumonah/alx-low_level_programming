@@ -2,11 +2,11 @@
 #include "main.h"
 
 /**
-* error_file - check if the file is opened and can handle errors
+* error_file - check if the filecan be opened
 * @file_from: intial file to copy from
 * @file_to: the destination file to copy to
 * @argv: argument vector
-* Return: return nothing
+* Return: no return
 */
 void error_file(int file_from, int file_to, char *argv[])
 {
@@ -50,9 +50,9 @@ int main(int argc, char *argv[])
 		chars = read(file_from, buffer, 1024);
 		if (chars == -1)
 			error_file(-1, 0, argv);
+		mode = write(file_to, buffer, chars);
 		if (mode == -1)
-			mode = write(file_to, buffer, chars);
-		error_file(0, -1, argv);
+			error_file(0, -1, argv);
 	}
 
 	close_error = close(file_from);
@@ -62,6 +62,7 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	close_error = close(file_to);
+	if (close_error == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d/n", file_from);
 		exit(100);

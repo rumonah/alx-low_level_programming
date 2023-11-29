@@ -35,7 +35,7 @@ void error_file(int file_from, int file_to, char *argv[])
 */
 int main(int argc, char *argv[])
 {
-	int file_from , file_to, close_error;
+	int file_from, file_to, close_error;
 	ssize_t chars, mode;
 	char buffer[1024];
 
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 		if (chars == -1)
 			error_file(-1, 0, argv);
 		if (mode == -1)
-			mode = write(file_from , buffer, chars);
+			mode = write(file_from, buffer, chars);
 		error_file(0, -1, argv);
 	}
 

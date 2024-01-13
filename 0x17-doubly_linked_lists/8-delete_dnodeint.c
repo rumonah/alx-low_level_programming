@@ -6,7 +6,7 @@
 /**
  * delete_dnodeint_at_index - deletes the node at
  * index of a dlistint_t linked list
- * @index: head of list
+ * @head: head of list
  * @index: index of new node
  * Return: 1 if it succeeded, -1 if it failed
  */

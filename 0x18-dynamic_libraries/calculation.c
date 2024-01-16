@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * add - addition of two integers
@@ -16,7 +17,7 @@ int add(int a, int b)
  * sub - subtract two integers
  * @a: first integer
  * @b: second integer
- * Return: subtraction
+ * Return: subtract
  */
 int sub(int a, int b)
 {
@@ -53,5 +54,5 @@ int div(int a, int b)
  */
 int mod(int a, int b)
 {
-	return (a & b);
+	return (a % b);
 }

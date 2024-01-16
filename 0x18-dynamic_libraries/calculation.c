@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
 /**
  * add - addition of two integers
@@ -28,7 +28,7 @@ int sub(int a, int b)
  * mul - multiply two integers
  * @a: first integer
  * @b: second integer
- * Return: multiplication
+ * Return: multiply
  */
 int mul(int a, int b)
 {
@@ -39,7 +39,7 @@ int mul(int a, int b)
  * div - divide two integers
  * @a: first integers
  * @b: second integers
- * Return: division
+ * Return: divide
  */
 int div(int a, int b)
 {

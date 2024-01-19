@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- * add - addition of two integers
+ * add - add of two integers
  * @a: the first integer
  * @b: second integer
  * Return: addition

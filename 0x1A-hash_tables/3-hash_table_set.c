@@ -37,7 +37,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new == NULL)
 	{
 		free(the_value_copied);
-		
 		return (0);
 	}
 

@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "hash_tables.h"
+#include <stddef.h>
 
 /**
  * sorted_list - insert a new node in sorted
@@ -78,7 +79,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	char *keycode, *valuecode;
 	shash_node_t *mall, *wally;
 
-	if (!ht || !key !*key || !value)
+	if (!ht || !key || !*key || !value)
 		return (0);
 	valuecode = strdup(value);
 	if (!valuecode)
@@ -128,7 +129,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	if (!ht || !key || !*key)
 		return (NULL);
 	mode = key_index((const unsigned char *)key, ht->size);
-	mode = ht->array[mode];
+	node = ht->array[mode];
 	while (node)
 	{
 		if (!strcmp(key, node->key))
@@ -155,7 +156,7 @@ void shash_table_print(const shash_table_t *ht)
 	{
 		if (r)
 			printf(",");
-		printf("'%s': '%s'", new->key, new->value);
+		printf("'%s': '%s'", code->key, code->value);
 		r = 1;
 		code = code->snext;
 	}
@@ -180,11 +181,11 @@ void shash_table_print_rev(const shash_table_t *ht)
 	{
 		if (r)
 			printf(",");
-		printf("'%s': '%s'", new->key, new->value);
+		printf("'%s': '%s'", code->key, code->value);
 		r = 1;
 		code = code->sprev;
 	}
-	printf("}\n")
+	printf("}\n");
 }
 
 /**
